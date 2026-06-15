@@ -1,4 +1,4 @@
-import { ConfigProvider } from 'antd'
+import { ConfigProvider, App as AntdApp } from 'antd'
 import Routes from './pages/Routes'
 
 function App() {
@@ -29,7 +29,10 @@ function App() {
           },
         }}
       >
-        <Routes />
+        {/* ⬇️ component={false} lagane se antd aapke layout aur colors ko kharab nahi karega */}
+        <AntdApp component={false}>
+          <Routes />
+        </AntdApp>
       </ConfigProvider>
     </>
   )
