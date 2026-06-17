@@ -60,62 +60,63 @@ const Register = () => {
 
             <div className="w-full max-w-[1100px] grid grid-cols-1 lg:grid-cols-2 bg-white rounded-[3rem] shadow-2xl overflow-hidden relative z-10 border border-gray-100">
                 {/* Form Side */}
-                <div className="p-12! flex flex-col justify-center">
-                    <div className="mb-10">
-                        <div className="w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-200 mb-6">
+                <div className="pt-5! px-10! flex flex-col justify-center">
+                    <div className="mb-3">
+                        {/* <div className="w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-200 mb-6">
                             <span className="text-white font-bold text-xl">R</span>
-                        </div>
-                        <Title level={2} className="!font-bold !mb-2">Create an Account</Title>
-                        <Text className="!text-orange-500">Join EatEase and start your culinary journey.</Text>
+                        </div> */}
+                        <Title level={3} className="font-bold! mb-1!">Create an Account</Title>
+                        <Text className="text-orange-500">Join EatEase and start your culinary journey.</Text>
                     </div>
 
-                    <Form name='register' layout="vertical" scrollToFirstError className="space-y-2">
+                    <Form name='register' layout="vertical" scrollToFirtError className="space-y-0">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Form.Item
+                            <Form.Item className='mb-4!'
                                 name="fullName"
                                 label={<span className="font-semibold text-gray-700">Full Name</span>}
                                 rules={[{ required: true, message: 'Required!' }]}
                             >
                                 <Input
                                     placeholder="Enter Your Full Name" name='fullName' onChange={handleChange}
-                                    className="h-14 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
+                                    className="h-10 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
                                 />
                             </Form.Item>
                             <Form.Item
+                                className='mb-4!'
                                 name="phoneNumber"
                                 label={<span className="font-semibold text-gray-700">Phone Number</span>}
                                 rules={[{ required: true, message: 'Required!' }, { type: 'string', message: 'Enter phone number!' }]}
                             >
                                 <Input
                                     placeholder="Enter Your Phone Number" name='phoneNumber' onChange={handleChange}
-                                    className="h-14 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
+                                    className="h-10 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
                                 />
                             </Form.Item>
                         </div>
 
                         <Form.Item
-                            name="email"
+                            name="email" className='mb-4!'
                             label={<span className="font-semibold text-gray-700">Email Address</span>}
                             rules={[{ required: true, message: 'Required!' }, { type: 'email', message: 'Invalid email!' }]}
                         >
                             <Input
                                 prefix={<MailOutlined className="text-gray-400 mr-2" />}
                                 placeholder="Enter Your Email Address" name='email' onChange={handleChange}
-                                className="h-14 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
+                                className="h-10 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
                             />
                         </Form.Item>
-                        <Form.Item
+                        <Form.Item className='mb-4!'
                             name="address"
                             label={<span className="font-semibold text-gray-700">Address</span>}
                             rules={[{ required: true, message: 'Required!' }, { type: 'string', message: 'Enter address!' }]}
                         >
                             <Input
                                 placeholder="Enter Your Address" name='address' onChange={handleChange}
-                                className="h-14 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
+                                className="h-10 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
                             />
                         </Form.Item>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Form.Item
+                            <Form.Item className='mb-4!'
                                 name="password"
                                 label={<span className="font-semibold text-gray-700">Password</span>}
                                 rules={[{ required: true, message: 'Required!' }, { min: 6, message: 'Min 6 characters!' }]}
@@ -123,35 +124,35 @@ const Register = () => {
                                 <Input.Password
                                     prefix={<LockOutlined className="text-gray-400 mr-2" />}
                                     placeholder="••••••••" name='password' onChange={handleChange}
-                                    className="h-14 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
+                                    className="h-10 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
                                 />
                             </Form.Item>
 
-                            <Form.Item
+                            <Form.Item className='mb-4!'
                                 name="confirmPassword"
                                 label={<span className="font-semibold text-gray-700">Confirm Password</span>}
                             >
                                 <Input.Password
                                     prefix={<LockOutlined className="text-gray-400 mr-2" />}
                                     placeholder="Confirm Password" name='confirmPassword' onChange={handleChange}
-                                    className="h-14 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
+                                    className="h-10 rounded-2xl border-gray-200 focus:border-orange-500 hover:border-orange-500"
                                 />
                             </Form.Item>
                         </div>
 
                         <Form.Item>
-                            <Button
+                            <Button className='mb-4!'
                                 type="primary"
                                 loading={isLoading}
                                 onClick={handleRegister}
-                                className="w-full h-14 rounded-2xl bg-orange-500 hover:bg-orange-600 border-none font-bold text-lg shadow-xl shadow-orange-200"
+                            // className="bg-red-500 hover:bg-red-600 border-none font-bold text-lg shadow-xl shadow-red-200"
                             >
                                 Create Account
                             </Button>
                         </Form.Item>
                     </Form>
 
-                    <div className="text-center mt-4">
+                    <div className="text-center mb-4 mt-0">
                         <Text className="text-gray-500">Already have an account? </Text>
                         <Link to="/auth/login" className="text-orange-600 font-bold hover:text-orange-700">
                             Sign in here
@@ -166,9 +167,9 @@ const Register = () => {
                         alt="Cooking"
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex flex-col justify-end p-12">
-                        <Title level={2} className="!text-white !mb-4">Become a Part of Us</Title>
-                        <Paragraph className="!text-white/80 text-lg mb-0">
+                    <div className="absolute inset-0 bg-linear-to-b from-blue-900/80 to-transparent flex flex-col justify-end p-12">
+                        <Title level={2} className="text-white! mb-4!">Become a Part of Us</Title>
+                        <Paragraph className="text-white/80! text-lg mb-0">
                             Create your account today and unlock a world of EatEase flavors, exclusive events, and the best dining experience in town.
                         </Paragraph>
                     </div>
