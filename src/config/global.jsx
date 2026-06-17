@@ -6,4 +6,5 @@ window.getRandomId = () => Math.random().toString(36).slice(2) + Math.random().t
 
 window.isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-window.API = import.meta.env.VITE_API_URL  
+window.API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+window.api = import.meta.env.VITE_API_URL || 'http://localhost:8000';
