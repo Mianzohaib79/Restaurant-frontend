@@ -36,7 +36,7 @@ const Register = () => {
 
         setIsLoading(true);
 
-        axios.post(window.api + "/api/auth/register", formData)
+        axios.post(`${window.API}/api/auth/register`, formData)
             .then((res) => {
                 const { status, data } = res;
                 if (status === 201) {
