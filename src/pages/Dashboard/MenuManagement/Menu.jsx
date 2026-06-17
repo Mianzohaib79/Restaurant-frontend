@@ -38,6 +38,7 @@ const Menu = () => {
             ]);
 
             if (menuRes.status === 200) {
+                console.log("menuresdata:", menuRes.data);
                 // Handles both backend variations (menuItems / menuitems)
                 setMenuItems(menuRes.data.menuItems || menuRes.data.menuitems || []);
             }
