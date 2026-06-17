@@ -14,7 +14,7 @@ const CategoryManagement = () => {
 
     const getCategories = async () => {
         setIsLoading(true);
-        axios.get(`${window.api}/api/categories/get-categories`)
+        axios.get(`${window.API}/api/categories/get-categories`)
             .then(res => {
                 if (res.status === 200) {
                     setCategories(res.data.categories);
@@ -31,7 +31,7 @@ const CategoryManagement = () => {
 
     const handleAddCategory = (values) => {
         setIsLoading(true);
-        axios.post(`${window.api}/api/categories/add-category`, values, { headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` } })
+        axios.post(`${window.API}/api/categories/add-category`, values, { headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` } })
             .then(res => {
                 if (res.status === 201) {
                     getCategories();
@@ -49,7 +49,7 @@ const CategoryManagement = () => {
 
     const deleteCategory = (id) => {
         setIsLoading(true);
-        axios.delete(`${window.api}/api/categories/delete-category/${id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` } })
+        axios.delete(`${window.API}/api/categories/delete-category/${id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` } })
             .then(res => {
                 if (res.status === 200) {
                     getCategories();

@@ -19,7 +19,7 @@ const DashboardHome = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('jwt');
-            const res = await axios.get(`${window.api}/api/orders/dashboard-stats`, {
+            const res = await axios.get(`${window.API}/api/orders/dashboard-stats`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (res.data.success) {

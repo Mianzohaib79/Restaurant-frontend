@@ -31,10 +31,10 @@ const Menu = () => {
         setIsLoading(true);
         try {
             const [menuRes, categoryRes] = await Promise.all([
-                axios.get(`${window.api}/api/menu/get-menuitems`, {
+                axios.get(`${window.API}/api/menu/get-menuitems`, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` }
                 }),
-                axios.get(`${window.api}/api/categories/get-categories`)
+                axios.get(`${window.API}/api/categories/get-categories`)
             ]);
 
             if (menuRes.status === 200) {
