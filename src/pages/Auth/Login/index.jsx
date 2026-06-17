@@ -27,7 +27,7 @@ const Login = () => {
 
         setIsLoading(true);
 
-        axios.post(window.api + "/api/auth/login", formData)
+        axios.post(`${window.api}/api/auth/login`, formData)
             .then((res) => {
                 const { status, data } = res;
                 if (status === 200) {
