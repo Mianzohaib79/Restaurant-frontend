@@ -40,7 +40,7 @@ const Cart = () => {
 
     const tax = subtotal * 0.1;
     const total = subtotal + tax + (cartItems.length > 0 ? 5.00 : 0); // $5 delivery if cart not empty
-    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    const totalItems = cartItems.length;
 
     const handleConfirmOrder = async () => {
         if (!isAuth) {

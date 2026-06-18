@@ -95,7 +95,7 @@ export const CartProvider = ({ children }) => {
         setCartItems([]);
     };
 
-    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const cartCount = cartItems.length;
     const subtotal = cartItems.reduce((total, item) => {
         const price = typeof item.itemPrice === 'string' ? parseFloat(item.itemPrice) : (item.itemPrice || item.price || 0);
         return total + (price * item.quantity);
