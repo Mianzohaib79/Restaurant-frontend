@@ -78,7 +78,7 @@ const Menu = () => {
                     <div className="inline-block px-4 py-2 bg-orange-50 text-orange-600 rounded-full font-bold text-sm mb-4">
                         Discover Our Menu
                     </div>
-                    <Title className="!text-5xl !font-bold mb-6">Experience True <span className="text-orange-500">Gastronomy</span></Title>
+                    <Title className="text-5xl! font-bold! mb-6">Experience True <span className="text-orange-500">Gastronomy</span></Title>
                     <Paragraph className="text-gray-500 text-lg">
                         Explore our curated selection of fine dishes, where each plate tells a story of tradition, innovation, and passion.
                     </Paragraph>
@@ -137,10 +137,10 @@ const Menu = () => {
                                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
                                         <div className="absolute top-5 right-5 font-bold z-10">
-                                            <Button 
-                                                shape="circle" 
-                                                icon={<HeartFilled className={isFavorite(item.itemId || item._id) ? "text-red-500" : "text-gray-200 hover:text-red-500 transition-colors"} />} 
-                                                className="border-none shadow-lg h-10 w-10 flex items-center justify-center bg-white!" 
+                                            <Button
+                                                shape="circle"
+                                                icon={<HeartFilled className={isFavorite(item.itemId || item._id) ? "text-red-500" : "text-gray-200 hover:text-red-500 transition-colors"} />}
+                                                className="border-none shadow-lg h-10 w-10 flex items-center justify-center bg-white!"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     toggleFavorite(item);
@@ -162,7 +162,7 @@ const Menu = () => {
                             >
                                 <div className="p-1">
                                     <div className="flex justify-between items-start mb-2">
-                                        <Title level={4} className="!mb-0 !text-xl group-hover:text-orange-500 transition-colors truncate">
+                                        <Title level={4} className="mb-0! text-xl! group-hover:text-orange-500 transition-colors truncate">
                                             {item.itemName}
                                         </Title>
                                     </div>
