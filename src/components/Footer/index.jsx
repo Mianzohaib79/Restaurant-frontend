@@ -15,8 +15,8 @@ const Footer = () => {
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <Row gutter={[48, 48]}>
-                    {/* Brand Section */}
-                    <Col xs={24} lg={8}>
+                    {/* Brand Section - xl={8} for desktop, lg={12} forces full breathing room on medium viewports */}
+                    <Col xs={24} sm={24} lg={12} xl={8}>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -93,8 +93,8 @@ const Footer = () => {
                         </motion.div>
                     </Col>
 
-                    {/* Quick Links */}
-                    <Col xs={24} sm={12} lg={4}>
+                    {/* Quick Links - Smooth layout on md/lg screens */}
+                    <Col xs={24} sm={12} lg={12} xl={4}>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ const Footer = () => {
                     </Col>
 
                     {/* Menu Categories */}
-                    <Col xs={24} sm={12} lg={4}>
+                    <Col xs={24} sm={12} lg={12} xl={4}>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -129,8 +129,8 @@ const Footer = () => {
                         </motion.div>
                     </Col>
 
-                    {/* Contact Info */}
-                    <Col xs={24} lg={8}>
+                    {/* Contact Info - Prevent text clipping between 992px and 1022px */}
+                    <Col xs={24} sm={24} lg={12} xl={8}>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +143,7 @@ const Footer = () => {
                                     <motion.div
                                         whileHover={{ scale: 1.2, rotate: 10, backgroundColor: "rgba(249, 115, 22, 0.2)" }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                        className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-orange-500 text-xl cursor-pointer"
+                                        className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-orange-500 text-xl cursor-pointer shrink-0"
                                     >
                                         <EnvironmentOutlined />
                                     </motion.div>
@@ -156,7 +156,7 @@ const Footer = () => {
                                     <motion.div
                                         whileHover={{ scale: 1.2, rotate: 10, backgroundColor: "rgba(249, 115, 22, 0.2)" }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                        className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-orange-500 text-xl cursor-pointer"
+                                        className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-orange-500 text-xl cursor-pointer shrink-0"
                                     >
                                         <PhoneOutlined />
                                     </motion.div>
@@ -169,13 +169,13 @@ const Footer = () => {
                                     <motion.div
                                         whileHover={{ scale: 1.2, rotate: 10, backgroundColor: "rgba(249, 115, 22, 0.2)" }}
                                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                        className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-orange-500 text-xl cursor-pointer"
+                                        className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-orange-500 text-xl cursor-pointer shrink-0"
                                     >
                                         <MailOutlined />
                                     </motion.div>
                                     <div>
                                         <Text className="text-white! font-bold block mb-1">Email</Text>
-                                        <Text className="text-white!">rafiqzohai515@gmail.com</Text>
+                                        <Text className="text-white! break-all">rafiqzohai515@gmail.com</Text>
                                     </div>
                                 </div>
                             </div>

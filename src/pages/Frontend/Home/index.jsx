@@ -92,80 +92,79 @@ const Home = () => {
             </section>
 
             {/* Popular Dishes Section */}
-            <section className="py-24">
-                <div className="container mx-auto px-6 lg:px-12">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                        <div className="max-w-xl text-left">
-                            <div className="flex items-center gap-2 text-orange-600 font-bold mb-2 uppercase tracking-widest text-sm">
+            <section className="py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-10 md:mb-16 gap-4 text-left">
+                        <div>
+                            <div className="flex items-center gap-2 text-orange-600 font-bold mb-2 uppercase tracking-widest text-xs md:text-sm">
                                 <FireFilled /> Hot & Trending
                             </div>
-                            <Title level={2} className="!text-4xl !font-bold mb-0">Our Signature Dishes</Title>
+                            <Title level={2} className="!text-3xl md:!text-4xl !font-bold mb-0">Our Signature Dishes</Title>
                         </div>
-                        <Link to="/menu">
-                            <Button type="primary" size="large" className="bg-gray-900 hover:bg-black border-none h-14 px-10 rounded-2xl font-bold">
+                        <Link to="/menu" className="w-full sm:w-auto">
+                            <Button type="primary" size="large" className="w-full sm:w-auto bg-gray-900 hover:bg-black border-none h-12 md:h-14 px-6 md:px-10 rounded-xl md:rounded-2xl font-bold text-sm md:text-base">
                                 View Full Menu
                             </Button>
                         </Link>
-
                     </div>
 
                     {popularDishes.length > 0 ? (
-                        <Row gutter={[32, 32]}>
-                        {popularDishes.slice(0, 4).map((dish) => {
-                            const id = dish.itemId || dish._id || dish.id;
-                            const name = dish.itemName || dish.name;
-                            const image = dish.imageURL || dish.image;
-                            const category = dish.itemCategory || dish.category;
-                            const price = parseFloat(dish.itemPrice ?? dish.price ?? 0);
+                        <Row gutter={[24, 24]}>
+                            {popularDishes.slice(0, 4).map((dish) => {
+                                const id = dish.itemId || dish._id || dish.id;
+                                const name = dish.itemName || dish.name;
+                                const image = dish.imageURL || dish.image;
+                                const category = dish.itemCategory || dish.category;
+                                const price = parseFloat(dish.itemPrice ?? dish.price ?? 0);
 
-                            return (
-                            <Col xs={24} sm={12} lg={6} key={id}>
-                                <Card
-                                    hoverable
-                                    className="overflow-hidden rounded-[2rem] border-none shadow-xl shadow-gray-100/50 group"
-                                    cover={
-                                        <div className="relative overflow-hidden aspect-[4/5]">
-                                            <img
-                                                alt={name}
-                                                src={image}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                            />
-                                            <div className="absolute top-4 left-4">
-                                                <Badge count={category} className="site-badge-count-4" style={{ backgroundColor: '#fff', color: '#000', fontWeight: 'bold' }} />
-                                            </div>
-                                            <div className="absolute top-4 right-4">
-                                                <Button
-                                                    shape="circle"
-                                                    icon={<HeartFilled className={isFavorite(id) ? "text-red-500" : "text-gray-300"} />}
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        toggleFavorite(dish);
-                                                    }}
-                                                    className="border-none shadow-lg flex items-center justify-center h-10 w-10"
-                                                />
-                                            </div>
-                                        </div>
-                                    }
-                                >
-                                    <div className="flex justify-between items-start mb-2">
-                                        <Title level={5} className="!mb-0 group-hover:text-orange-500 transition-colors">{name}</Title>
-                                        <div className="flex items-center gap-1 text-orange-500 font-bold">
-                                            <StarFilled className="text-xs" /> {dish.rating || '4.8'}
-                                        </div>
-                                    </div>
-                                    <div className="flex justify-between items-center mt-4">
-                                        <span className="text-2xl font-black text-gray-900">${price.toFixed(2)}</span>
-                                        <Button
-                                            onClick={() => addToCart(dish)}
-                                            className="rounded-xl border-gray-200 font-bold hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all"
+                                return (
+                                    <Col xs={12} sm={12} md={12} lg={12} xl={6} key={id}>
+                                        <Card
+                                            hoverable
+                                            className="overflow-hidden h-full rounded-2xl md:rounded-[2rem] border-none shadow-xl shadow-gray-100/50 group xl:p-3"
+                                            cover={
+                                                <div className="relative overflow-hidden aspect-[1/1] sm:aspect-[4/5] xl:aspect-[4/3.3] rounded-t-xl md:rounded-t-[1.5rem]">
+                                                    <img
+                                                        alt={name}
+                                                        src={image}
+                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    />
+                                                    <div className="absolute top-2 left-2 md:top-4 md:left-4 scale-90 md:scale-100 xl:scale-85">
+                                                        <Badge count={category} className="site-badge-count-4" style={{ backgroundColor: '#fff', color: '#000', fontWeight: 'bold' }} />
+                                                    </div>
+                                                    <div className="absolute top-2 right-2 md:top-4 md:right-4 scale-90 md:scale-100 xl:scale-85">
+                                                        <Button
+                                                            shape="circle"
+                                                            icon={<HeartFilled className={isFavorite(id) ? "text-red-500" : "text-gray-300"} />}
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                toggleFavorite(dish);
+                                                            }}
+                                                            className="border-none shadow-lg flex items-center justify-center h-8 w-8 md:h-10 md:w-10 xl:h-8 xl:w-8"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            }
                                         >
-                                            Add to Cart
-                                        </Button>
-                                    </div>
-                                </Card>
-                            </Col>
-                            );
-                        })}
+                                            <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2 gap-1 xl:gap-0">
+                                                <Title level={5} className="!text-sm md:!text-base xl:!text-[14px] !mb-0 group-hover:text-orange-500 transition-colors line-clamp-1">{name}</Title>
+                                                <div className="flex items-center gap-1 text-orange-500 font-bold text-xs md:text-sm xl:text-xs whitespace-nowrap">
+                                                    <StarFilled className="text-[10px] md:text-xs xl:text-[10px]" /> {dish.rating || '4.8'}
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mt-3 md:mt-4 xl:mt-2">
+                                                <span className="text-xl md:text-2xl xl:text-lg font-black text-gray-900">${price.toFixed(2)}</span>
+                                                <Button
+                                                    onClick={() => addToCart(dish)}
+                                                    className="w-full sm:w-auto text-xs md:text-sm xl:text-[11px] px-3 py-1 h-8 md:h-10 xl:h-8 rounded-lg md:rounded-xl xl:rounded-lg border-gray-200 font-bold hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all"
+                                                >
+                                                    Add to Cart
+                                                </Button>
+                                            </div>
+                                        </Card>
+                                    </Col>
+                                );
+                            })}
                         </Row>
                     ) : (
                         <Card className="rounded-[2rem] border-none shadow-sm py-12 text-center">

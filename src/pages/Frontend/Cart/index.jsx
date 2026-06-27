@@ -89,18 +89,18 @@ const Cart = () => {
 
     return (
         <div className="bg-gray-50 min-h-screen pt-32 pb-24">
-            <div className="container mx-auto px-6 lg:px-12">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12">
                 <div className="flex items-center gap-4 mb-10">
                     <Link to="/menu">
                         <Button shape="circle" icon={<ArrowLeftOutlined />} className="h-12 w-12 border-none shadow-sm flex items-center justify-center bg-white" />
                     </Link>
-                    <Title level={2} className="!mb-0 !font-bold">Shopping Cart</Title>
+                    <Title level={2} className="mb-0! font-bold!">Shopping Cart</Title>
                 </div>
 
                 {cartItems.length > 0 ? (
                     <Row gutter={[32, 32]}>
                         <Col xs={24} lg={16}>
-                            <div className="space-y-6">
+                            <div className="space-y-4">
                                 {cartItems.map((item) => {
                                     const id = item.itemId || item.id || item._id;
                                     const name = item.itemName || item.name;
@@ -109,33 +109,42 @@ const Cart = () => {
                                     const itemTotal = price * item.quantity;
 
                                     return (
-                                        <Card key={id} className="rounded-[2rem] border-none shadow-sm overflow-hidden mb-6!">
-                                            <div className="flex flex-col sm:flex-row items-center gap-6">
-                                                <div className="w-full sm:w-32 h-32 rounded-2xl overflow-hidden shrink-0">
+                                        <Card key={id} className="rounded-3xl border-none shadow-sm overflow-hidden mb-4! bg-white p-2 sm:p-0">
+                                            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 md:gap-6">
+                                                {/* Mobile Responsive Image Container */}
+                                                <div className="w-full sm:w-32 h-44 sm:h-32 rounded-2xl overflow-hidden shrink-0">
                                                     <img src={image} alt={name} className="w-full h-full object-cover" />
                                                 </div>
-                                                <div className="flex-1 text-center sm:text-left">
-                                                    <Title level={4} className="!mb-1">{name}</Title>
-                                                    <Text className="text-gray-400">{item.itemCategory || item.category || 'EatEase Selection'}</Text>
-                                                    <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                                                        <div>
-                                                            <Text className="block text-xl font-bold text-orange-500">${price.toFixed(2)}</Text>
-                                                            <Text className="text-gray-400">Item total: ${itemTotal.toFixed(2)}</Text>
+
+                                                {/* Details & Info Container */}
+                                                <div className="w-full flex-1 flex flex-col justify-between text-left px-2 sm:px-0 sm:pt-2">
+                                                    <div>
+                                                        <Title level={4} className="mb-1! text-lg md:text-xl font-bold">{name}</Title>
+                                                        <Text className="text-gray-400 text-xs md:text-sm">{item.itemCategory || item.category || 'EatEase Selection'}</Text>
+                                                    </div>
+
+                                                    {/* Price, Totals and Inputs layout fixed for Mobile */}
+                                                    <div className="mt-4 flex flex-row items-end justify-between gap-2 w-full pt-3 border-t border-gray-100 sm:border-none">
+                                                        <div className="flex flex-col">
+                                                            <Text className="text-xl font-black text-orange-500">${price.toFixed(2)}</Text>
+                                                            <Text className="text-gray-400 text-xs">Total: ${itemTotal.toFixed(2)}</Text>
                                                         </div>
-                                                        <div className="flex items-center gap-4">
+
+                                                        {/* Quantity & Delete Actions */}
+                                                        <div className="flex items-center gap-2 sm:gap-4">
                                                             <InputNumber
                                                                 min={1}
                                                                 max={10}
                                                                 value={item.quantity}
                                                                 onChange={(val) => updateQuantity(id, val || 1)}
-                                                                className="rounded-xl border-gray-100 h-10 flex items-center"
+                                                                className="rounded-xl border-gray-100 h-9 sm:h-10 w-16 sm:w-20 flex items-center text-sm"
                                                             />
                                                             <Button
                                                                 type="text"
                                                                 danger
                                                                 icon={<DeleteOutlined />}
                                                                 onClick={() => removeItem(id)}
-                                                                className="hover:bg-red-50 rounded-xl h-10 w-10 flex items-center justify-center"
+                                                                className="hover:bg-red-50 rounded-xl h-9 sm:h-10 w-9 sm:w-10 flex items-center justify-center text-base"
                                                             />
                                                         </div>
                                                     </div>
@@ -150,7 +159,7 @@ const Cart = () => {
                         <Col xs={24} lg={8}>
                             <div className="space-y-6 sticky top-28">
                                 <Card className="rounded-[2rem] border-none shadow-sm bg-white mb-6!">
-                                    <Title level={4} className="!font-bold !mb-5">Customer Details</Title>
+                                    <Title level={4} className="font-bold! mb-5!">Customer Details</Title>
                                     <div className="space-y-4">
                                         <Input
                                             prefix={<UserOutlined className="text-orange-500" />}
@@ -177,7 +186,7 @@ const Cart = () => {
                                 </Card>
 
                                 <Card className="rounded-[2.5rem] border-none shadow-xl p-6 bg-white">
-                                    <Title level={3} className="mb-8 !font-bold">Order Summary</Title>
+                                    <Title level={3} className="mb-8 font-bold!">Order Summary</Title>
                                     <div className="space-y-4">
                                         <div className="flex justify-between">
                                             <Text className="text-gray-500 text-lg">Items</Text>
