@@ -64,7 +64,7 @@ const Login = () => {
                     />
                     <div className="absolute inset-0 bg-linear-to-b from-orange-600/80 to-transparent flex flex-col justify-end p-8 md:p-12">
                         <Title level={2} className="text-white! mb-3! text-xl md:text-2xl lg:text-3xl">Experience EatEase Dining</Title>
-                        <Paragraph className="text-white/80 text-sm md:text-base lg:text-lg mb-0">
+                        <Paragraph className="text-white! text-sm md:text-base lg:text-lg mb-0">
                             Join our community of food enthusiasts and enjoy exclusive benefits, personalized recommendations, and seamless ordering.
                         </Paragraph>
                     </div>
@@ -133,7 +133,7 @@ const Login = () => {
                     <div className="text-center text-sm md:text-base">
                         <Text className="text-gray-500">Don't have an account? </Text>
                         <Link to="/auth/register" className="text-orange-600 font-bold hover:text-orange-700">
-                            Sign up for free
+                            Sign up your account
                         </Link>
                     </div>
                 </div>
