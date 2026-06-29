@@ -207,7 +207,7 @@ const DashboardHome = () => {
                         <Col xs={24} sm={12} lg={6} key={idx}>
                             <motion.div variants={itemVariants}>
                                 <Card className="rounded-[2rem] border-none shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group p-2 relative overflow-hidden bg-white">
-                                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-gray-50 to-gray-100 rounded-bl-[4rem] -z-0 opacity-50"></div>
+                                    <div className="absolute top-0 right-0 w-24 h-24 from-gray-50 -z-0 opacity-50"></div>
                                     <div className="flex items-center justify-between mb-4 relative z-10">
                                         <div className={`w-12 h-12 ${stat.bg} ${stat.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
                                             {stat.icon}
