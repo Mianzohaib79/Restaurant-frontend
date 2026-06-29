@@ -142,13 +142,17 @@ const Hero = () => {
             >
                 <div className="aspect-video w-full bg-black rounded-[1.5rem] overflow-hidden shadow-2xl">
                     <video
-                        src="/5101342-uhd_3840_2160_25fps.mp4"
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="auto"
+                        controls={false}
                         className="w-full h-full object-cover pointer-events-none"
-                    />
+                    >
+                        <source src="/5101342-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </Modal>
         </section>
