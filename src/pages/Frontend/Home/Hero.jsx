@@ -3,7 +3,6 @@ import { Button, Typography, Space, Row, Col, Modal } from 'antd';
 import { ArrowRightOutlined, PlayCircleOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
-
 const { Title, Paragraph } = Typography;
 
 const Hero = () => {
@@ -117,7 +116,6 @@ const Hero = () => {
                 destroyOnClose={true}
                 centered
                 width={800}
-                /* style={...} directly wrapper ko target karta hai jo white box ko jad se khatam kar dega */
                 style={{ backgroundColor: 'transparent', padding: 0, boxShadow: 'none' }}
                 styles={{
                     mask: { backdropFilter: 'blur(4px)' },
@@ -150,7 +148,8 @@ const Hero = () => {
                         controls={false}
                         className="w-full h-full object-cover pointer-events-none"
                     >
-                        <source src="/5101342-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+                        {/* Fixed path with standard clean naming syntax */}
+                        <source src="/story-video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
