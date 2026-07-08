@@ -124,7 +124,7 @@ const Menu = () => {
                             <Card
                                 hoverable
                                 className="overflow-hidden rounded-2xl sm:rounded-[2rem] border-none shadow-md shadow-gray-100/50 group bg-white w-full flex flex-col justify-between"
-                                styles={{ body: { padding: '8px sm:padding-16px', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' } }}
+                                classNames={{ body: "p-2 sm:p-4 flex flex-col flex-1 justify-between" }}
                             >
                                 {/* Fixed Ratio Compact Image Wrapper */}
                                 <div className="relative overflow-hidden aspect-square rounded-xl sm:rounded-[1.5rem] w-full bg-gray-50 flex-shrink-0">
