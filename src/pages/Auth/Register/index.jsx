@@ -69,7 +69,7 @@ const Register = () => {
                         <Text className="text-orange-500">Join EatEase and start your culinary journey.</Text>
                     </div>
 
-                    <Form name='register' layout="vertical" scrollToFirtError className="space-y-0">
+                    <Form name='register' layout="vertical" scrollToFirstError className="space-y-0">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <Form.Item className='mb-4!'
                                 name="fullName"
